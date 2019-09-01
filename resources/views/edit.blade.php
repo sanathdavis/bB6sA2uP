@@ -4,6 +4,9 @@
 @endphp
 
 @extends('layouts.main')
+@section('title')
+   Edit Ticket::Jim's Offroad Service
+@endsection
 @section('content')
   {{-- Create Ticket Form --}}
   <section class="bg-light section" data-page="edit">

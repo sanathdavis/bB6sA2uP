@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('title')
+   Service requests::Jim's Offroad Service
+@endsection
 @section('content')
   @include('message')
   <!-- Masthead -->
