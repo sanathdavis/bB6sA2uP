@@ -45,9 +45,25 @@
     </div>
   </footer>
 
+  <div id="spiner-load-ajax" class="modal">
+    <div class="widget-spin">
+        <i class="ace-icon fa fa-spinner fa-spin green bigger-500"></i>
+    </div>
+  </div>
+
   <!-- Bootstrap core JavaScript -->
-  <script src="/js/app.js"></script>
+  <script src="/js/app.js"></script>  
   <script type="text/javascript">
-    $(document).ready(function(){ console.log('loaded');});
+    $(document).ready(function(){ 
+      //Changing the active tab in the navbar
+      var page = $('section.section').data('page');
+      $('li#'+ page).addClass('active');
+      //hiding alerts
+      $(".alert")
+      .delay(5000)
+      .slideUp(200, function() {
+        $(this).hide();
+      });
+    });
   </script>
   @stack('scripts')

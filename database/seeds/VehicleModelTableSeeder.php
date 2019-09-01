@@ -11,7 +11,8 @@ class VehicleModelTableSeeder extends Seeder
    *
    * @return void
    */
-  public function run(){
+  public function run()
+  {
     $vehicleMakes = VehicleMakes::all();
     $models = [
       [
@@ -38,9 +39,25 @@ class VehicleModelTableSeeder extends Seeder
         'make'  => 'Ford',
         'model' => 'F-150'
       ],
+      [
+        'make'  => 'Dodge',
+        'model' => 'Ram 1500'
+      ],
+      [
+        'make'  => 'Dodge',
+        'model' => 'Ram Rebel'
+      ],
+      [
+        'make'  => 'Toyota',
+        'model' => 'Tacoma'
+      ],
+      [
+        'make'  => 'Toyota',
+        'model' => 'Tundra'
+      ],
     ];
-    foreach($models AS $model){
-      $v_id = $vehicleMakes->where('title',$model['make'])->first()->id;
+    foreach ($models as $model) {
+      $v_id = $vehicleMakes->where('title', $model['make'])->first()->id;
       VehicleModels::firstOrCreate([
         'vehicle_make_id' => $v_id,
         'title'           => $model['model']

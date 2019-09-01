@@ -12,4 +12,10 @@
 */
 
 Route::get('/', 'ServiceRequestsController@index')->name('home');
-Route::get('{id}', 'ServiceRequestsController@edit')->name('edit');
+Route::get('/new', 'ServiceRequestsController@add')->name('add');
+Route::post('/store', 'ServiceRequestsController@store')->name('store');
+Route::get('/models/{makeId}', 'ServiceRequestsController@getModels')->name('modals');
+Route::get('{serviceRequest}', 'ServiceRequestsController@edit')->name('edit');
+Route::post('/update/{serviceRequest}', 'ServiceRequestsController@update')->name('update');
+Route::get('delete/{serviceRequest}', 'ServiceRequestsController@delete')->name('delete');
+Route::post('/search', 'ServiceRequestsController@search')->name('search');
